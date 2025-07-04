@@ -8,3 +8,4 @@ class d{
         System.out.println(temp);
     }
 }
+//Math.abs(temp)--->inbult funcion
