@@ -1,0 +1,45 @@
+//using hashmaps
+class Solution {
+    public int majorityElement(int[] nums) {
+        HashMap<Integer,Integer> obj=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            int key=nums[i];
+            obj.put(key,obj.getOrDefault(key,0)+1);
+        }
+        int n=nums.length/2;
+        int res=0;
+        for(int value:obj.keySet()){
+            if(obj.get(value)>n){
+                res=value;
+                break;
+            }
+
+        }
+        return res;
+    }
+}
+
+//using arrays for loops
+import java.util.*;
+class d{
+    public static void main(String args[]){
+        int ar[]={2,2,1,1,1,2,2};
+        int n=ar.length;
+        int count=0;
+        int mx=0;
+        int temp=0;
+        for(int i=0;i<n-1;i++){
+            for(int j=i+1;j<n;j++){
+                if(ar[i]==ar[j]){
+                    count++;
+                    mx=Math.max(mx,count);
+                }
+                if(mx>n/2){
+                    temp=ar[i];
+                }
+            }
+        }
+        System.out.print(temp);
+    
+    }
+}
