@@ -8,6 +8,7 @@ class d{
             if(obj.containsKey(n)){
                 int prev=obj.get(n);
                 obj.put(n,prev+1);
+            //obj.put(key,obj.getOrDefault(key,0)+1);
             }else{
                 obj.put(n,1);
             }
