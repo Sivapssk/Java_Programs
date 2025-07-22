@@ -1,0 +1,20 @@
+import java.util.*;
+class d{
+    public static void main(String args[]){
+        HashMap <Integer,Integer> obj=new HashMap<>();
+        int arr[]={2,4,1,2,3,4,5};
+        for(int i=0;i<arr.length;i++){
+            int n=arr[i];
+            if(obj.containsKey(n)){
+                int prev=obj.get(n);
+                obj.put(n,prev+1);
+            }else{
+                obj.put(n,1);
+            }
+        }
+        for(int val:obj.keySet()){
+            System.out.println(val+" "+obj.get(val));
+        }
+    
+    }
+}
