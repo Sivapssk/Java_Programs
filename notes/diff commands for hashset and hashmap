@@ -1,0 +1,40 @@
+hashmap:
+HashMap<Integer,Integer> hm=new HashMap<>();
+  for(int j=0;j<ar.length;j++){
+            int data=ar[j];
+            if(hm.containsKey(data)){
+                int prev=hm.get(data);
+                hm.put(data,prev+1);
+                
+                
+            }else{
+                hm.put(data,1);
+            }
+        }
+
+for(int val:hm.keySet()){
+            System.out.println(val+" "+hm.get(val));
+        }
+    }
+
+    
+1.-->hm.containsKey()
+2.put(key,value)
+3.get(key)-->gets value of key
+4.-->val:hm.keySet()
+5.containsValue(Object value)
+
+hashset:
+HashSet<Integer> hs=new HashSet<>();
+  for(int i=0;i<ar.length;i++){
+            int value=ar[i];
+            if(!hs.contains(value)){
+                hs.add(value);
+            }else{
+                duplicate=ar[i];
+            }
+        }
+
+
+add(element)
+contains(element)
