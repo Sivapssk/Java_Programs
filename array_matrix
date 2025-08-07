@@ -1,0 +1,19 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int [][][] ar={{{3,2,7},{2,5,8},{8,3,9}}};
+        int r=ar.length;
+        int c=ar[0].length;
+        int d=ar[0][0].length;
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                for(int k=0;k<d;k++){
+                    System.out.print(ar[i][j][k]);
+                }
+                
+            }
+        }
+    }
+      
+     
+}
