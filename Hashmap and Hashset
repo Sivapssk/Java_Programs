@@ -1,0 +1,41 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        HashSet<Integer> hs=new HashSet<>();
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        int ar[]={2,3,1,3,4};
+        int duplicate=5;
+        for(int i=0;i<ar.length;i++){
+            int value=ar[i];
+            if(!hs.contains(value)){
+                hs.add(value);
+            }else{
+                duplicate=ar[i];
+            }
+        }
+        System.out.println(hs);
+        for(int j=0;j<ar.length;j++){
+            int data=ar[j];
+            if(hm.containsKey(data)){
+                int prev=hm.get(data);
+                hm.put(data,prev+1);
+                
+                
+            }else{
+                hm.put(data,1);
+            }
+        }
+        System.out.println(hm);
+        for(int val:hm.keySet()){
+            System.out.println(val+" "+hm.get(val));
+        }
+    }
+}
+
+//output
+[1, 2, 3, 4]
+{1=1, 2=1, 3=2, 4=1}
+1 1
+2 1
+3 2
+4 1
