@@ -1,0 +1,45 @@
+//array
+
+class Main {
+    public static void main(String[] args) {
+        int ar[]={5,6,3,2,2,3};
+        int n=ar.length;
+        int sb=3;
+        int res=0;
+        for(int i=0;i<=n-sb;i++){
+            int j=i+sb;
+            int temp=0;
+            for(int k=i;k<j;k++){
+                // System.out.print(ar[k]+" ");
+                temp=temp+ar[k];
+            }
+            res=Math.max(res,temp);
+            // System.out.println();
+        }
+        System.out.println(res);
+    }
+}
+
+//string
+
+class d{
+    public static void main(String args[]){
+        String s="animuthyam";
+        int n=s.length();
+        int sa=3;
+        int res=0;
+        for(int i=0;i<=n-sa;i++){
+            int j=i+sa;
+            int temp=0;
+            for(int k=i;k<j;k++){
+                int a=s.charAt(k);
+                temp=temp+a;
+            }
+            res=Math.max(temp,res);
+
+           
+        }
+        System.out.println(res);
+
+    }
+}
