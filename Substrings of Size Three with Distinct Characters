@@ -27,3 +27,36 @@ class d{
         System.out.println(ans);
     }
 }
+
+
+
+//using two pointers
+
+import java.util.*;
+class d{
+    public static void main(String args[]){
+        int k=3;
+        String s1="aababcabc";
+        int n=s1.length();
+        int l=0;
+        int ans=0;
+        HashMap<Character,Integer> hm=new HashMap<>();
+        for(int r=0;r<n;r++){
+            Character ch=s1.charAt(r);
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
+            if(r-l==k){
+                Character tm=s1.charAt(l);
+                hm.put(tm,hm.get(tm)-1);
+                if(hm.get(tm)==0){
+                    hm.remove(tm);
+                }
+                l++;
+            }
+            if(hm.size()==3){
+                ans++;
+            }
+
+        }
+        System.out.println(ans);
+    }
+}
