@@ -1,0 +1,29 @@
+import java.util.*;
+class d{
+    public static boolean fun(String s,int k){
+        HashSet<Character> hs=new HashSet<>();
+        for(int i=0;i<s.length();i++){
+            Character chr=s.charAt(i);
+            hs.add(chr);
+        }
+        if(hs.size()==k){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+    public static void main(String args[]){
+        int k=3;
+        String s1="aababcabc";
+        int n=s1.length();
+        int ans=0;
+        for(int j=0;j<=n-3;j++){
+            boolean temp=fun(s1.substring(j,j+k),k);
+            if(temp){
+                ans++;
+            }
+        }
+        System.out.println(ans);
+    }
+}
