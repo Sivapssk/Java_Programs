@@ -1,0 +1,93 @@
+\\string comparison
+
+class d{
+  public static boolean equal(String a,String b){
+    for(int i=0;i<a.length();i++){
+      if(a.charAt(i)!=b.charAt(i)){
+        return false;
+      }
+    }
+    return true;
+
+  }
+  public static void main(String args[]){
+    String a="Siva";
+    String b1="siva";
+    boolean c=equal(a,b1);
+    System.out.println(c);
+  }
+}
+
+\\Hashmap comparison
+
+import java.util.*;
+class d{
+  public static boolean fun(HashMap<Integer,Integer> hma,HashMap<Integer,Integer> hmb){
+    if(hma.size()!=hmb.size()){
+      return false;
+    }
+    for(int key:hma.keySet()){
+      if(!hmb.containsKey(key)){
+        return false;
+      }
+      int a=hma.get(key);
+      int b=hmb.get(key);
+      if(a!=b){
+        return false;
+      }
+    }
+    return true;
+  }
+  public static void main(String args[]){
+    HashMap<Integer,Integer> hma=new HashMap<>();
+    HashMap<Integer,Integer> hmb=new HashMap<>();
+    hma.put(1,2);
+    hmb.put(1,2);
+    hma.put(2,3);
+    hmb.put(2,4);
+    System.out.println(fun(hma,hmb));
+  }
+}
+
+\\string anagrams
+
+import java.util.*;
+class d{
+  public static boolean fun(HashMap<Character,Integer>hma,HashMap<Character,Integer>hmb){
+    if(hma.size()!=hmb.size()){
+      return false;
+    }
+    for(char key:hma.keySet()){
+      if(!hmb.containsKey(key)){
+        return false;
+      }
+      int c=hma.get(key);
+      int d=hmb.get(key);
+      if(c!=d){
+        return false;
+      }
+    }
+    return true;
+  }
+  public static void main(String args[]){
+    HashMap<Character,Integer> hma=new HashMap<>();
+    HashMap<Character,Integer> hmb=new HashMap<>();
+    String a="abcd";
+    String b="cabd";
+    for(int i=0;i<a.length();i++){
+      char ch=a.charAt(i);
+      hma.put(ch,hma.getOrDefault(ch,0)+1);
+    }
+    for(int i=0;i<b.length();i++){
+      char ch=b.charAt(i);
+      // hmb.put(ch,hmb.getOrDefault(ch,0)+1);
+      if(hmb.containsKey(ch)){
+        int prev=hmb.get(ch);
+        hmb.put(ch,prev-1);
+      }else{
+        hmb.put(ch,1);
+      }
+    }
+    System.out.println(fun(hma,hmb));
+  }
+}
