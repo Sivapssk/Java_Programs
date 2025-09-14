@@ -1,0 +1,12 @@
+import java.util.*;
+class d{
+  public static void main(String args[]){
+    String s="tcs nqt hiring";
+    String r="nqt";
+    String a=s.replace(r,"");
+    System.out.println(a);
+  }
+}
+
+//output
+tcs  hiring
